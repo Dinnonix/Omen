@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/magic-fire.wav.mp3-c354e62308049ac759fac045ff09a545.mp3str"
+
+[deps]
+
+source_file="res://Godot/SFX/magic-fire.wav.mp3"
+dest_files=[ "res://.import/magic-fire.wav.mp3-c354e62308049ac759fac045ff09a545.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

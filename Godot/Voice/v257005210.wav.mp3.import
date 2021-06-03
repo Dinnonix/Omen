@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/v257005210.wav.mp3-06bbca08d13ed5f1008030ae6ba9b298.mp3str"
+
+[deps]
+
+source_file="res://Godot/Voice/v257005210.wav.mp3"
+dest_files=[ "res://.import/v257005210.wav.mp3-06bbca08d13ed5f1008030ae6ba9b298.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

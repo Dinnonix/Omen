@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/CURSOL_MOVE.wav.mp3-f9e754e64f2272e9ad9f10c061b64e58.mp3str"
+
+[deps]
+
+source_file="res://Godot/SFX/CURSOL_MOVE.wav.mp3"
+dest_files=[ "res://.import/CURSOL_MOVE.wav.mp3-f9e754e64f2272e9ad9f10c061b64e58.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

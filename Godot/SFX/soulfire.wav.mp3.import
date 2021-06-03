@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/soulfire.wav.mp3-6b13f072bd0e60f17e17869d02002a1e.mp3str"
+
+[deps]
+
+source_file="res://Godot/SFX/soulfire.wav.mp3"
+dest_files=[ "res://.import/soulfire.wav.mp3-6b13f072bd0e60f17e17869d02002a1e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

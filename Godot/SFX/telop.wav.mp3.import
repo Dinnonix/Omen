@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/telop.wav.mp3-32349fb9bfdb8a5c6e964eb0cd4fae33.mp3str"
+
+[deps]
+
+source_file="res://Godot/SFX/telop.wav.mp3"
+dest_files=[ "res://.import/telop.wav.mp3-32349fb9bfdb8a5c6e964eb0cd4fae33.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Souls and Blood - Saint of the Damned.mp3-11404c06d84a2fba58d195911f279a44.mp3str"
+
+[deps]
+
+source_file="res://Godot/Music/Souls and Blood - Saint of the Damned.mp3"
+dest_files=[ "res://.import/Souls and Blood - Saint of the Damned.mp3-11404c06d84a2fba58d195911f279a44.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
