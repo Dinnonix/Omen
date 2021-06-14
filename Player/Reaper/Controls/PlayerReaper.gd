@@ -15,7 +15,7 @@ onready var raycasts = $Raycasts
 func _physics_process(delta):
 	var move = _get_input()
 	velocity.y += gravity * delta 
-	velocity = move_and_slide(velocity, UP, SLOPE_STOP)
+	velocity = move_and_slide(velocity, Vector2.UP, true)
 	is_grounded = _check_is_grounded()
 	if not is_grounded:
 		animator.play("Jump")
