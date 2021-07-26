@@ -27,11 +27,6 @@ extents = Vector2( 17.5, 24 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 1 ), ExtResource( 19 ), ExtResource( 17 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "Attack",
@@ -51,6 +46,11 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 } ]
 
 [node name="PlayerReaper" type="KinematicBody2D"]
@@ -68,8 +68,8 @@ shape = SubResource( 1 )
 position = Vector2( 4.76837e-07, 0 )
 scale = Vector2( 0.96, 1.07415 )
 frames = SubResource( 2 )
-animation = "Attack"
-frame = 3
+animation = "Run"
+frame = 5
 
 [node name="Raycasts" type="Node2D" parent="."]
 visible = false
