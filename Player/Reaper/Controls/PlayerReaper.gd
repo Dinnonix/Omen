@@ -8,18 +8,19 @@ var move_speed = 5 * 40
 var gravity = 1200
 var jump_velocity = -500
 var is_grounded 
-#var is_dead = false
+var is_dead = false
+var isAttacking = false
 
 onready var animator = $Body/AnimatedReaper
 onready var raycasts = $Raycasts
 
 func _physics_process(delta):
-	#if is_dead == false:
+	if is_dead == false:
 		var move = _get_input()
 		velocity.y += gravity * delta 
 		velocity = move_and_slide(velocity, Vector2.UP, true)
 		is_grounded = _check_is_grounded()
-		if not is_grounded:
+		if not is_grounded && isAttacking == false:
 			animator.play("Jump")
 		elif move != 0:
 			$Body.scale.x = move
@@ -30,14 +31,14 @@ func _physics_process(delta):
 			velocity.y = jump_velocity 
 			animator.play("Jump")
 		if Input.is_action_pressed("attack") && is_grounded:
-			animator.play("Attack")
+			animator.play_until_finished("Attack")
 
-#func dead():
-#	is_dead = true
-#	velocity = Vector2(0,0)
-#	animator.play("Dead")
-#	$ReaperCollision.disabled = true
-#	$Timer.start()
+func dead():
+	is_dead = true
+	velocity = Vector2(0,0)
+	animator.play("Dead")
+	$ReaperCollision.disabled = true
+	$Timer.start()
 
 func _get_input():
 	var move_direction = -int(Input.is_action_pressed("move_left")) + int(Input.is_action_pressed("move_right"))
@@ -52,3 +53,7 @@ func _check_is_grounded():
 		if raycast.is_colliding():
 			return true
 
+
+
+func _on_Timer_timeout():
+	pass # Replace with function body.
