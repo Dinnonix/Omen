@@ -860,7 +860,7 @@ position = Vector2( -512, -24 )
 scale = Vector2( 0.139535, 0.135125 )
 frames = SubResource( 1 )
 animation = "Lit"
-frame = 8
+frame = 7
 playing = true
 
 [node name="Bonfire" type="AudioStreamPlayer2D" parent="Foreground/Bonfire"]

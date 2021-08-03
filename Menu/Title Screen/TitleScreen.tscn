@@ -65,7 +65,7 @@ __meta__ = {
 
 [node name="Logo" type="Label" parent="Menu"]
 margin_right = 1680.0
-margin_bottom = 523.0
+margin_bottom = 525.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "Omen"
