@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Player/Reaper/Controls/PlayerReaper.gd" type="Script" id=2]
 [ext_resource path="res://Player/Reaper/Sprites/Hero.png" type="Texture" id=22]
@@ -21,25 +21,22 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
 }
-
-[sub_resource type="Animation" id=3]
-resource_name = "fall"
-length = 0.5
-step = 0.25
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.25 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 12, 14 ]
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "end_attack"
+} ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 step = 0.2
@@ -56,7 +53,7 @@ tracks/0/keys = {
 "values": [ 7, 8, 9, 10 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 length = 0.8
 step = 0.2
 tracks/0/type = "value"
@@ -72,7 +69,7 @@ tracks/0/keys = {
 "values": [ 11, 13, 12, 14 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 length = 1.2
 loop = true
 tracks/0/type = "value"
@@ -88,62 +85,66 @@ tracks/0/keys = {
 "values": [ 15, 16, 17, 18, 19, 20 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "attack"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "fall"
 
-[sub_resource type="AnimationNodeAnimation" id=9]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "idle"
 
-[sub_resource type="AnimationNodeAnimation" id=10]
+[sub_resource type="AnimationNodeAnimation" id=9]
 animation = "jump"
 
-[sub_resource type="AnimationNodeAnimation" id=11]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "running"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 switch_mode = 2
 auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
+auto_advance = true
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 switch_mode = 2
-auto_advance = true
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=22]
 switch_mode = 2
-auto_advance = true
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=24]
-auto_advance = true
-
-[sub_resource type="AnimationNodeStateMachine" id=22]
-states/attack/node = SubResource( 7 )
-states/attack/position = Vector2( 595, 70 )
-states/fall/node = SubResource( 8 )
-states/fall/position = Vector2( 16, 98 )
-states/idle/node = SubResource( 9 )
+[sub_resource type="AnimationNodeStateMachine" id=23]
+states/attack/node = SubResource( 6 )
+states/attack/position = Vector2( 456, 60 )
+states/fall/node = SubResource( 7 )
+states/fall/position = Vector2( 63, 60 )
+states/idle/node = SubResource( 8 )
 states/idle/position = Vector2( 275, 60 )
-states/jump/node = SubResource( 10 )
-states/jump/position = Vector2( 171, 146 )
-states/running/node = SubResource( 11 )
-states/running/position = Vector2( 388, 182 )
-transitions = [ "idle", "attack", SubResource( 12 ), "idle", "running", SubResource( 13 ), "running", "idle", SubResource( 14 ), "attack", "idle", SubResource( 15 ), "idle", "jump", SubResource( 16 ), "running", "jump", SubResource( 17 ), "jump", "running", SubResource( 18 ), "jump", "fall", SubResource( 20 ), "fall", "idle", SubResource( 24 ) ]
+states/jump/node = SubResource( 9 )
+states/jump/position = Vector2( 63, 205 )
+states/running/node = SubResource( 10 )
+states/running/position = Vector2( 275, 205 )
+transitions = [ "idle", "attack", SubResource( 11 ), "idle", "running", SubResource( 12 ), "running", "idle", SubResource( 13 ), "attack", "idle", SubResource( 14 ), "idle", "jump", SubResource( 15 ), "running", "jump", SubResource( 16 ), "fall", "idle", SubResource( 17 ), "jump", "fall", SubResource( 18 ), "jump", "running", SubResource( 19 ), "jump", "idle", SubResource( 20 ), "running", "attack", SubResource( 21 ), "attack", "running", SubResource( 22 ) ]
 start_node = "idle"
 graph_offset = Vector2( -326, 19 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=24]
 
 [node name="PlayerReaper" type="KinematicBody2D"]
 collision_layer = 0
@@ -164,17 +165,16 @@ frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Body"]
 anims/attack = SubResource( 2 )
-anims/fall = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/jump = SubResource( 5 )
-anims/running = SubResource( 6 )
+anims/idle = SubResource( 3 )
+anims/jump = SubResource( 4 )
+anims/running = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="Body"]
-tree_root = SubResource( 22 )
+tree_root = SubResource( 23 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 process_mode = 0
-parameters/playback = SubResource( 23 )
+parameters/playback = SubResource( 24 )
 
 [node name="Raycasts" type="Node2D" parent="."]
 visible = false
