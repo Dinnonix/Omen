@@ -13,6 +13,8 @@ var isAttacking = false
 
 onready var animator = $Body/AnimationTree.get("parameters/playback")
 onready var raycasts = $Raycasts
+onready var hitbox = $Hitbox
+
 func attack():
 	animator.travel("attack");
 	
@@ -54,21 +56,6 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x,0, 10)
 		velocity.y += gravity * delta 
 		velocity = move_and_slide(velocity, Vector2.UP, true)	
-#		if Input.is_action_pressed("jump") && is_grounded: 
-#			velocity.y = jump_velocity 
-#			animator.travel("jump") 
-#		if not is_grounded:
-#			animator.travel("jump") 
-#		elif move != 0:
-#			$Body.scale.x = move
-#			animator.travel("running")
-#		if Input.is_action_just_pressed("attack"):
-#			animator.travel("attack");
-#		elif move == 0:
-#			animator.travel("idle")
-
-
-
 
 func dead():
 	is_dead = true
@@ -90,7 +77,12 @@ func _check_is_grounded():
 		if raycast.is_colliding():
 			return true
 
-
+func _melee():
+	if animator.current_animation == "attack":
+		for body in hitbox.get_overlapping_bodies():
+			if body.is_in_group("Enemy"):
+				yield(get_tree().create_timer(0,5), "timeout")
+				#body.health -= melee_damage
 
 func _on_Timer_timeout():
 	pass # Replace with function body.

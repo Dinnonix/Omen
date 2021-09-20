@@ -17,7 +17,7 @@
 [ext_resource path="res://Enemies/Skeleton/Skeleton.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16.1351, 21.2158 )
+extents = Vector2( 11.0984, 20.8963 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -36,15 +36,16 @@ animations = [ {
 script = ExtResource( 15 )
 
 [node name="SkeletonCollision" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 5.46584 )
+position = Vector2( -1.72516, 5.08247 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Node2D" parent="."]
 
 [node name="AnimatedSkeleton" type="AnimatedSprite" parent="Body"]
+position = Vector2( 0.191689, 0 )
 frames = SubResource( 2 )
-animation = "Rise"
-frame = 5
+animation = "Walk"
+frame = 2
 
 [node name="Raycasts" type="Node2D" parent="."]
 
